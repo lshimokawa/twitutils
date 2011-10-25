@@ -1,7 +1,6 @@
 Twitutils::Application.routes.draw do
-  get "navigation/index"
-
   root :to => 'navigation#index'
+  get "search/hashtag"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

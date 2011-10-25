@@ -1,0 +1,21 @@
+<h1>TwitUtils - Search HashTag</h1>
+<p>Busca los usuarios que twittearon con determinado hashtag:</p>
+
+<%= form_tag(search_hashtag_path, :method => :get) do %>
+<div class="clearfix">
+<%= text_field_tag(:hashtag) %>
+<%= submit_tag("Buscar", :class => "btn primary", :name => nil) %>
+</div>
+<% end %>
+
+<% if session[:users] %>
+<p class = "message-results">
+  <strong><%= session[:users].count %></strong> usuarios han twitteado usando el hashtag <%= hashtag_link(session[:hashtag]) %>:</p>
+  <ul>
+    <% session[:users].each do |user| %>
+    <li>
+      <%= twitter_user_link(user) %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
