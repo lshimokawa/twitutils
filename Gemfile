@@ -13,12 +13,11 @@ group :assets do
   gem 'uglifier'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
 end
 
 group :test do
-  gem 'sqlite3'
   # Pretty printed test output
   gem 'turn', :require => false  
 end
